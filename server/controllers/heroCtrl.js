@@ -78,7 +78,10 @@ module.exports = {
             console.error(err);
             return res.send(err);
          }
-         return res.send("Hero " + req.params.heroId + " Deleted. " + results[0].name +" is dead.")
+         if (results.length === 0) {
+            return res.status(404).send("Hero not found");
+         }
+         return res.send("Hero " + req.params.heroId + " Deleted. " + results[0].name +" is dead.");
       })
    }
 }
