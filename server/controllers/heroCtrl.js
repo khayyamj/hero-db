@@ -52,7 +52,7 @@ module.exports = {
          if (results.length === 0) {
             return res.status(404).send("No Hero found");
          }
-      return res.send(results[0]);
+      return res.send(results[0]); /* returning results outside of the array */
       })
    },
    update: function(req, res) {
@@ -78,7 +78,7 @@ module.exports = {
             console.error(err);
             return res.send(err);
          }
-         return res.send("Hero " + req.params.heroId + " Deleted")
+         return res.send("Hero " + req.params.heroId + " Deleted. " + results[0].name +" is dead.")
       })
    }
 }
