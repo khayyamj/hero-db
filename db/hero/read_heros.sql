@@ -1,1 +1,1 @@
-SELECT * FROM Product
+/* Get List of Heroes */

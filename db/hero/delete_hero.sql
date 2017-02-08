@@ -1,2 +1,1 @@
-DELETE * Product
-WHERE id = $1;
+/* Delete Hero from the Table BY ID! */

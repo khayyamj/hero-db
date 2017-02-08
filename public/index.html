@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body ng-app="heroApp">
+    <div class="card-list" ng-controller= "heroCtrl">
+      <div>
+        {{name}}
+      </div>
+      <div class="card" ng-repeat = "hero in heroes">
+        <section class="card-details">
+          Name: {{hero.name}}
+          </br>
+          Origin: {{hero.origin}}
+          </br>
+          Hometown: {{hero.hometown}}
+        </section>
+        <img class="heroImg" ng-src="{{hero.imageUrl}}" alt="">
+        </br>
+      </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="controllers/heroCtrl.js" charset="utf-8"></script>
+    <script src="services/heroSrvc.js" charset="utf-8"></script>
+  </body>
+</html>

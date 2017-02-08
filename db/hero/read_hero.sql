@@ -1,2 +1,1 @@
-SELECT * FROM Product
-WHERE id = $1
+/* Get single hero by ID */

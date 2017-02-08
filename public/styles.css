@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+}
+.card-list{
+  display: flex;
+}
+.card{
+  background-color: #adadad;
+  padding: 20px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 10px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroImg{
+  max-height: 200px;
+}

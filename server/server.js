@@ -1,27 +1,13 @@
-// Default Express App
-var express = require('express');
-var app = module.exports = express();
-var bodyParser = require('body-parser');
-var port = 8080;
+// Setup Express App
 
-// Connect Massive
-var massive = require('massive');
-var connectionString = "postgres://postgres:postgres@localhost/massive";
-var massiveInstance = massive.connectSync({connectionString:connectionString})
+// Controllers
+var heroCtrl = require('./controllers/heroCtrl');
+// Body Parser
 
-app.set('db', massiveInstance);
-var productCtrl = require('./controllers/productCtrl');
-var cartCtrl = require('./controllers/cartCtrl');
+// Hero Endpoints
 
-app.use(bodyParser.json());
+// Power Endpoints
 
-app.get('/api/products', productCtrl.getAll)
-app.get('/api/products/:productId', productCtrl.getOne)
-app.post('/api/products', productCtrl.create)
-app.put('/api/products/:productId', productCtrl.update)
-app.delete('/api/products/:productId', productCtrl.delete)
+// Hero_Power Endpoints
 
-
-app.listen(port, function(){
-  console.log("listening on port" + port)
-})
+// Listen
