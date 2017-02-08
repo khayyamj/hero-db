@@ -53,6 +53,32 @@ module.exports = {
             return res.status(404).send("No Hero found");
          }
       return res.send(results[0]);
-   });
+      })
+   },
+   update: function(req, res) {
+      db.hero.update_hero ([
+         req.params.heroId,
+         req.body.name,
+         req.body.origin,
+         req.body.hometown,
+         req.body.imageUrl
+      ],
+      function (err, results) {
+         if (err) {
+            console.error(err);
+            return res.send(err);
+         }
+         return res.send(results[0]);
+      })
+   },
+   delete: function(req, res) {
+      db.hero.delete_hero ([req.params.heroId],
+      function(err, results) {
+         if (err) {
+            console.error(err);
+            return res.send(err);
+         }
+         return res.send("Hero " + req.params.heroId + " Deleted")
+      })
    }
 }
